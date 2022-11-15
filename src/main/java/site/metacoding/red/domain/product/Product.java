@@ -6,8 +6,8 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Product {
-	private boolean isOuter;
-	private Integer id;
+	private boolean soldout;
+	private Integer productId;
 	private String name;
 	private Integer price;
 	private Integer stock;
