@@ -6,8 +6,8 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Orders {
-	private boolean isOuter;
-	private Integer id;
+	private boolean cancel;
+	private Integer ordersId;
 	private Integer productId;
 	private Integer quantity;
 	private Integer payId;

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 public interface OrdersDao {
 	public void insert(Orders Orders);
 
-	public void update(Integer id, Orders Orders);
+	public void updateById(Integer id, Orders Orders);
 
 }
