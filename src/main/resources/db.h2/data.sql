@@ -50,3 +50,7 @@ insert into payment(cancel,  total_quantity, total_price)
 VALUES(1,  50, 70000);
 insert into payment(cancel, total_quantity, total_price) 
 VALUES(0,  10, 20000);
+
+select * from product;
+select * from orders;
+select * from payment;

@@ -3,7 +3,7 @@ package site.metacoding.red.web.dto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import site.metacoding.red.web.dto.OrdersReqDto.OrdersInsertReqDto;
+import site.metacoding.red.web.dto.OrdersReqDto.OrdersInsertDBReqDto;
 
 public class OrdersRespDto {
 
@@ -12,15 +12,17 @@ public class OrdersRespDto {
     @Getter
     public static class OrdersInsertRespDto {
         private boolean cancel;
+        private Integer ordersId;
         private Integer productId;
         private Integer quantity;
         private Integer payId;
 
-        public OrdersInsertRespDto(OrdersInsertReqDto ordersInsertReqDto) {
-            this.cancel = ordersInsertReqDto.isCancel();
-            this.productId = ordersInsertReqDto.getProductId();
-            this.quantity = ordersInsertReqDto.getQuantity();
-            this.payId = ordersInsertReqDto.getPayId();
+        public OrdersInsertRespDto(OrdersInsertDBReqDto ordersInsertDBReqDto) {
+            this.cancel = ordersInsertDBReqDto.isCancel();
+            this.ordersId = ordersInsertDBReqDto.getOrdersId();
+            this.productId = ordersInsertDBReqDto.getProductId();
+            this.quantity = ordersInsertDBReqDto.getQuantity();
+            this.payId = ordersInsertDBReqDto.getPayId();
         }
     }
 

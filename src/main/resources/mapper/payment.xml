@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.metacoding.red.domain.payment.PaymentDao">
 
-	<insert id="insert">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="paymentId">
 		INSERT INTO payment(cancel, total_quantity, total_price) 
 		VALUES(#{cancel}, #{totalQuantity}, #{totalPrice});
 	</insert>

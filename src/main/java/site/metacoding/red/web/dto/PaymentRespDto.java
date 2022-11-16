@@ -16,6 +16,7 @@ public class PaymentRespDto {
 
         public PaymentInsertRespDto(PaymentInsertReqDto paymentInsertReqDto) {
             this.cancel = paymentInsertReqDto.isCancel();
+            this.paymentId = paymentInsertReqDto.getPaymentId();
             this.totalQuantity = paymentInsertReqDto.getTotalQuantity();
             this.totalPrice = paymentInsertReqDto.getTotalPrice();
         }
@@ -25,9 +26,8 @@ public class PaymentRespDto {
     @Getter
     public static class PaymentUpdateRespDto {
         private boolean cancel;
-        private Integer ordersId;
-        private Integer productId;
-        private Integer quantity;
-        private Integer payId;
+        private Integer paymentId;
+        private Integer totalQuantity;
+        private Integer totalPrice;
     }
 }

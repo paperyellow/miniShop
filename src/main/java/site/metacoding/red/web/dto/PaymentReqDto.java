@@ -12,15 +12,15 @@ public class PaymentReqDto {
         private Integer paymentId;
         private Integer totalQuantity;
         private Integer totalPrice;
+
     }
 
     @Setter
     @Getter
     public static class PaymentUpdateReqDto {
         private boolean cancel;
-        private Integer ordersId;
-        private Integer productId;
-        private Integer quantity;
-        private Integer payId;
+        private Integer paymentId;
+        private Integer totalQuantity;
+        private Integer totalPrice;
     }
 }
