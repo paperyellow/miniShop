@@ -4,7 +4,7 @@
 
 	<insert id="insert">
 		INSERT INTO payment(cancel, total_quantity, total_price) 
-		VALUES(#{cancel}, #{total_quantity}, #{total_price});
+		VALUES(#{cancel}, #{totalQuantity}, #{totalPrice});
 	</insert>
 
 	<update id="update">

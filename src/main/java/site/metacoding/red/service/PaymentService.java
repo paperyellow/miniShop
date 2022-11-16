@@ -3,11 +3,18 @@ package site.metacoding.red.service;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-
-// 서비스는 Dao 조합하고, 트랜잭션을 관리한다.
+import site.metacoding.red.domain.payment.PaymentDao;
+import site.metacoding.red.web.dto.PaymentReqDto.PaymentInsertReqDto;
+import site.metacoding.red.web.dto.PaymentRespDto.PaymentInsertRespDto;
 
 @RequiredArgsConstructor
-@Service // IoC 등록
+@Service
 public class PaymentService {
 
+    final PaymentDao paymentDao;
+
+    public PaymentInsertRespDto insert(PaymentInsertReqDto paymentInsertReqDto) {
+        paymentDao.insert(paymentInsertReqDto);
+        return new PaymentInsertRespDto(paymentInsertReqDto);
+    }
 }

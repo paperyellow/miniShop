@@ -1,8 +1,11 @@
 package site.metacoding.red.domain.order;
 
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
 @Setter
 @Getter
 public class Orders {
@@ -12,6 +15,13 @@ public class Orders {
 	private Integer quantity;
 	private Integer payId;
 
-	// 엔티티가 아닌 필드
+	@Builder
+	public Orders(boolean cancel, Integer ordersId, Integer productId, Integer quantity, Integer payId) {
+		this.cancel = cancel;
+		this.ordersId = ordersId;
+		this.productId = productId;
+		this.quantity = quantity;
+		this.payId = payId;
+	}
 
 }

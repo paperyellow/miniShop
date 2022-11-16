@@ -6,7 +6,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Payment {
-	private boolean isOuter;
+	private boolean cancel;
 	private Integer id;
 	private Integer totalQuantity;
 	private Integer totalPrice;

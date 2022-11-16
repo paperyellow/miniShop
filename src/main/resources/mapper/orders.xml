@@ -4,12 +4,12 @@
 
 	<insert id="insert">
 		INSERT INTO orders(cancel, product_id, quantity, pay_id) 
-		VALUES(#{cancel}, #{product_id}, #{quantity}, #{pay_id}); 
+		VALUES(#{cancel}, #{productId}, #{quantity}, #{payId}); 
 	</insert>
 
 	<update id="update">
 		UPDATE orders SET cancel = #{cancel}, quantity =
-		#{quantity} WHERE orders_id = #{orders_id}
+		#{quantity} WHERE orders_id = #{ordersId}
 	</update>
 
 </mapper>
