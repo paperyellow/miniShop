@@ -12,4 +12,14 @@
 		#{quantity} WHERE orders_id = #{ordersId}
 	</update>
 
+	<update id="updateCancel">
+		UPDATE payment SET cancel = #{cancel}
+		WHERE payment_id = #{payment_id}
+	</update>
+
+	<select id="findByPaymentId"
+		resultType="site.metacoding.red.web.dto.OrdersRespDto$OrdersFindByPaymentIdRespDto">
+		SELECT * FROM orders WHERE product_id = #{productId}
+	</select>
+
 </mapper>

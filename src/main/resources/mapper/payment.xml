@@ -7,10 +7,9 @@
 		VALUES(#{cancel}, #{totalQuantity}, #{totalPrice});
 	</insert>
 
-	<update id="update">
-		UPDATE payment SET cancel = #{cancel}, total_quantity =
-		#{total_quantity}, total_price =
-		#{total_price} WHERE payment_id = #{payment_id}
+	<update id="updateCancel">
+		UPDATE payment SET cancel = #{cancel}
+		WHERE payment_id = #{paymentId}
 	</update>
 
 </mapper>

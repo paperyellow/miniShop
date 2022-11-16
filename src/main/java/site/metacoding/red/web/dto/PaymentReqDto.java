@@ -23,4 +23,11 @@ public class PaymentReqDto {
         private Integer totalQuantity;
         private Integer totalPrice;
     }
+
+    @Setter
+    @Getter
+    public static class PaymentCancelReqDto {
+        private boolean cancel;
+        private Integer paymentId;
+    }
 }

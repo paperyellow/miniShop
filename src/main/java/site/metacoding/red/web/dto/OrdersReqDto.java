@@ -43,4 +43,11 @@ public class OrdersReqDto {
         private Integer quantity;
         private Integer payId;
     }
+
+    @Setter
+    @Getter
+    public static class OrdersCancelReqDto {
+        private boolean cancel;
+        private Integer paymentId;
+    }
 }

@@ -1,7 +1,9 @@
 package site.metacoding.red.web.dto;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import site.metacoding.red.web.dto.PaymentReqDto.PaymentCancelReqDto;
 import site.metacoding.red.web.dto.PaymentReqDto.PaymentInsertReqDto;
 
 public class PaymentRespDto {
@@ -29,5 +31,18 @@ public class PaymentRespDto {
         private Integer paymentId;
         private Integer totalQuantity;
         private Integer totalPrice;
+    }
+
+    @NoArgsConstructor
+    @Setter
+    @Getter
+    public static class PaymentCancelRespDto {
+        private boolean cancel;
+        private Integer paymentId;
+
+        public PaymentCancelRespDto(PaymentCancelReqDto paymentCancelReqDto) {
+            this.cancel = paymentCancelReqDto.isCancel();
+            this.paymentId = paymentCancelReqDto.getPaymentId();
+        }
     }
 }

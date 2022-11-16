@@ -35,4 +35,14 @@ public class OrdersRespDto {
         private Integer quantity;
         private Integer payId;
     }
+
+    @Setter
+    @Getter
+    public static class OrdersFindByPaymentIdRespDto {
+        private boolean cancel;
+        private Integer ordersId;
+        private Integer productId;
+        private Integer quantity;
+        private Integer payId;
+    }
 }
