@@ -5,24 +5,24 @@
 <mapper namespace="site.metacoding.red.domain.product.ProductDao">
 
 	<insert id="insert">
-
+		insert into product(soldout, id,name, price, stock ) 
+		VALUES(#{soldout}, #{productId}, #{name}, #{price}, #{stock})
 	</insert>
 
 	<select id="findAll" resultType="site.metacoding.red.domain.product.Product">
-
+		SELECT * FROM product
 	</select>
 
 	<select id="findById" resultType="site.metacoding.red.domain.product.Product">
-
+		SELECT * FROM product WHERE id = #{productId}
 	</select>
 
 	<insert id="update">
-
+		Update product
+		SET soldout=#{soldout}, name=#{name}, price=#{price}, stock=#{stock} 
+		WHERE id= #{productId}
 	</insert>
 
-	<insert id="deleteById">
-
-	</insert>
 
 
 </mapper>
