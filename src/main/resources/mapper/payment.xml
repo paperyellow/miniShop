@@ -12,4 +12,12 @@
 		WHERE payment_id = #{paymentId}
 	</update>
 
+	<select id="findAll" resultType="site.metacoding.red.web.dto.PaymentRespDto$PaymentFindAllRespDto">
+		SELECT * FROM payment p 
+		INNER JOIN orders o
+		ON p.payment_id = o.payment_id
+		INNER JOIN product pro
+		ON o.product_id = pro.product_id;
+	</select>
+
 </mapper>
