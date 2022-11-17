@@ -12,7 +12,7 @@ import site.metacoding.red.web.dto.OrdersRespDto.OrdersFindByPaymentIdRespDto;
 public interface OrdersDao {
 	public void insert(OrdersInsertDBReqDto ordersInsertDBReqDto);
 
-	public void updateById(Integer id, Orders Orders);
+	public void updateById(Integer paymentId, Orders Orders);
 
 	public void updateCancel(OrdersCancelReqDto OrdersCancelReqDto);
 

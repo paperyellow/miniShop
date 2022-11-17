@@ -24,13 +24,13 @@ public class OrdersReqDto {
         private Integer ordersId;
         private Integer productId;
         private Integer quantity;
-        private Integer payId;
+        private Integer paymentId;
 
-        public OrdersInsertDBReqDto(OrdersInsertReqDto ordersInsertReqDto, Integer payId) {
+        public OrdersInsertDBReqDto(OrdersInsertReqDto ordersInsertReqDto, Integer paymentId) {
             this.cancel = ordersInsertReqDto.isCancel();
             this.productId = ordersInsertReqDto.getProductId();
             this.quantity = ordersInsertReqDto.getQuantity();
-            this.payId = payId;
+            this.paymentId = paymentId;
         }
     }
 
@@ -41,7 +41,7 @@ public class OrdersReqDto {
         private Integer ordersId;
         private Integer productId;
         private Integer quantity;
-        private Integer payId;
+        private Integer paymentId;
     }
 
     @Setter

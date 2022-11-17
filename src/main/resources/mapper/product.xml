@@ -12,23 +12,23 @@
 	</select>
 
 	<select id="findById" resultType="site.metacoding.red.domain.product.Product">
-		SELECT * FROM product WHERE id = #{productId}
+		SELECT * FROM product WHERE product_id = #{productId}
 	</select>
 
 	<insert id="update">
 		Update product
 		SET soldout=#{soldout}, name=#{name}, price=#{price}, stock=#{stock} 
-		WHERE id= #{productId}
+		WHERE product_id= #{productId}
 	</insert>
 
 	<select id="findStockById" resultType="site.metacoding.red.web.dto.ProductRespDto$ProductUpdateRespDto">
-		SELECT stock FROM product WHERE id = #{productId}
+		SELECT stock FROM product WHERE product_id = #{productId}
 	</select>
 
 	<insert id="updateStock">
 		Update product
 		SET stock=#{stock} 
-		WHERE id= #{productId}
+		WHERE product_id= #{productId}
 	</insert>
 
 

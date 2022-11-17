@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 public class Payment {
 	private boolean cancel;
-	private Integer id;
+	private Integer paymentId;
 	private Integer totalQuantity;
 	private Integer totalPrice;
 

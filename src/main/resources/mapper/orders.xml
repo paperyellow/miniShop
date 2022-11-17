@@ -3,8 +3,8 @@
 <mapper namespace="site.metacoding.red.domain.order.OrdersDao">
 
 	<insert id="insert" useGeneratedKeys="true" keyProperty="ordersId">
-		INSERT INTO orders(cancel, product_id, quantity, pay_id) 
-		VALUES(#{cancel}, #{productId}, #{quantity}, #{payId}); 
+		INSERT INTO orders(cancel, product_id, quantity, payment_id) 
+		VALUES(#{cancel}, #{productId}, #{quantity}, #{paymentId}); 
 	</insert>
 
 	<update id="update">
@@ -13,13 +13,13 @@
 	</update>
 
 	<update id="updateCancel">
-		UPDATE payment SET cancel = #{cancel}
-		WHERE payment_id = #{payment_id}
+		UPDATE orders SET cancel = #{cancel}
+		WHERE payment_id = #{paymentId}
 	</update>
 
 	<select id="findByPaymentId"
 		resultType="site.metacoding.red.web.dto.OrdersRespDto$OrdersFindByPaymentIdRespDto">
-		SELECT * FROM orders WHERE product_id = #{productId}
+		SELECT * FROM orders WHERE payment_id = #{paymentId}
 	</select>
 
 </mapper>

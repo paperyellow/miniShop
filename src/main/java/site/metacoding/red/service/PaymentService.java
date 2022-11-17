@@ -62,12 +62,14 @@ public class PaymentService {
     @Transactional
     public PaymentCancelRespDto updateCancel(Integer paymentId) {
         PaymentCancelReqDto paymentCancelReqDto = new PaymentCancelReqDto();
+        OrdersCancelReqDto ordersCancelReqDto = new OrdersCancelReqDto();
+
         paymentCancelReqDto.setCancel(true);
         paymentCancelReqDto.setPaymentId(paymentId);
         paymentDao.updateCancel(paymentCancelReqDto);
+
         List<OrdersFindByPaymentIdRespDto> ordersFindByPaymentIdRespDtos = ordersDao.findByPaymentId(paymentId);
         for (OrdersFindByPaymentIdRespDto ordersFindByPaymentIdRespDto : ordersFindByPaymentIdRespDtos) {
-            OrdersCancelReqDto ordersCancelReqDto = new OrdersCancelReqDto();
             ordersCancelReqDto.setCancel(true);
             ordersCancelReqDto.setPaymentId(paymentId);
             ordersDao.updateCancel(ordersCancelReqDto);

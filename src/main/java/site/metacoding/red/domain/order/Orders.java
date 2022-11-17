@@ -13,15 +13,15 @@ public class Orders {
 	private Integer ordersId;
 	private Integer productId;
 	private Integer quantity;
-	private Integer payId;
+	private Integer paymentId;
 
 	@Builder
-	public Orders(boolean cancel, Integer ordersId, Integer productId, Integer quantity, Integer payId) {
+	public Orders(boolean cancel, Integer ordersId, Integer productId, Integer quantity, Integer paymentId) {
 		this.cancel = cancel;
 		this.ordersId = ordersId;
 		this.productId = productId;
 		this.quantity = quantity;
-		this.payId = payId;
+		this.paymentId = paymentId;
 	}
 
 }
