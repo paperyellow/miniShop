@@ -2,10 +2,12 @@ package site.metacoding.red.domain.product;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
+@NoArgsConstructor
 public class Product {
 	private boolean soldout;
 	private Integer productId;
