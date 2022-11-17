@@ -5,16 +5,19 @@
 <mapper namespace="site.metacoding.red.domain.product.ProductDao">
 
 	<insert id="insert">
-		insert into product(soldout, id,name, price, stock ) 
-		VALUES(#{soldout}, #{productId}, #{name}, #{price}, #{stock})
+		insert into product(soldout,name, price, stock ) 
+		VALUES(#{soldout}, #{name}, #{price}, #{stock})
 	</insert>
 
 	<select id="findAll" resultType="site.metacoding.red.domain.product.Product">
-		SELECT * FROM product
+		SELECT  soldout, row_number() over(order BY id asc) as NO, name, price, stock 
+		FROM product
 	</select>
 
 	<select id="findById" resultType="site.metacoding.red.domain.product.Product">
-		SELECT * FROM product WHERE id = #{productId}
+		SELECT  soldout, row_number() over(order BY id asc) as NO, name, price, stock 
+		FROM product 
+		WHERE id = #{productId}
 	</select>
 
 	<insert id="update">
