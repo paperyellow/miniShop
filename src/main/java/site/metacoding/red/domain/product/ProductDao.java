@@ -13,11 +13,13 @@ public interface ProductDao {
 
 	public Product findById(Integer id);
 
-	public void insert(Product Product);
+	public Integer insert(Product product);
 
 	public void update(Integer id, Product Product);
 
-	public void updateStock(ProductUpdateReqDto productUpdateReqDto);
+	public ProductInsertRespDto insertProductResult(Integer productId);
+
+  public void updateStock(ProductUpdateReqDto productUpdateReqDto);
 
 	public ProductUpdateRespDto findStockById(Integer id);
 }

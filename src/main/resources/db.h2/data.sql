@@ -1,6 +1,6 @@
 drop table product;
 drop table orders;
-drop table company;
+drop table payment;
 
 create table product(
     soldout BOOLEAN,
