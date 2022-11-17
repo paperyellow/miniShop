@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.metacoding.red.domain.order.OrdersDao">
 
-	<insert id="insert">
-
+	<insert id="insert" useGeneratedKeys="true" keyProperty="ordersId">
+		INSERT INTO orders(cancel, product_id, quantity, payment_id) 
+		VALUES(#{cancel}, #{productId}, #{quantity}, #{paymentId}); 
 	</insert>
 
-	<select id="findAll" resultType="site.metacoding.red.domain.order.Orders">
+	<update id="update">
+		UPDATE orders SET cancel = #{cancel}, quantity =
+		#{quantity} WHERE orders_id = #{ordersId}
+	</update>
 
+	<update id="updateCancel">
+		UPDATE orders SET cancel = #{cancel}
+		WHERE payment_id = #{paymentId}
+	</update>
+
+	<select id="findByPaymentId"
+		resultType="site.metacoding.red.web.dto.OrdersRespDto$OrdersFindByPaymentIdRespDto">
+		SELECT * FROM orders WHERE payment_id = #{paymentId}
 	</select>
-
-	<select id="findById" resultType="site.metacoding.red.domain.order.Orders">
-
-	</select>
-
-	<insert id="update">
-
-	</insert>
-
-	<insert id="deleteById">
-
-	</insert>
-
 
 </mapper>

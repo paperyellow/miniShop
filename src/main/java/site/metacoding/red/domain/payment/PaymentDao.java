@@ -1,16 +1,14 @@
 package site.metacoding.red.domain.payment;
 
-import java.util.List;
-
 import org.springframework.stereotype.Repository;
+
+import site.metacoding.red.web.dto.PaymentReqDto.PaymentCancelReqDto;
+import site.metacoding.red.web.dto.PaymentReqDto.PaymentInsertReqDto;
 
 @Repository
 public interface PaymentDao {
-	public List<Payment> findAll();
 
-	public Payment findById(Integer id);
+	public void insert(PaymentInsertReqDto paymentInsertReqDto);
 
-	public void insert(Payment Payment);
-
-	public void update(Integer id, Payment Payment);
+	public void updateCancel(PaymentCancelReqDto paymentCancelReqDto);
 }

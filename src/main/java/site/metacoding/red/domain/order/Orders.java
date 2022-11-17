@@ -1,17 +1,27 @@
 package site.metacoding.red.domain.order;
 
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
 @Setter
 @Getter
 public class Orders {
-	private boolean isOuter;
-	private Integer id;
+	private boolean cancel;
+	private Integer ordersId;
 	private Integer productId;
 	private Integer quantity;
-	private Integer payId;
+	private Integer paymentId;
 
-	// 엔티티가 아닌 필드
+	@Builder
+	public Orders(boolean cancel, Integer ordersId, Integer productId, Integer quantity, Integer paymentId) {
+		this.cancel = cancel;
+		this.ordersId = ordersId;
+		this.productId = productId;
+		this.quantity = quantity;
+		this.paymentId = paymentId;
+	}
 
 }

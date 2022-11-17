@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.metacoding.red.domain.product.ProductDao">
 
 	<insert id="insert">
@@ -14,15 +12,24 @@
 	</select>
 
 	<select id="findById" resultType="site.metacoding.red.domain.product.Product">
-		SELECT * FROM product WHERE id = #{productId}
+		SELECT * FROM product WHERE product_id = #{productId}
 	</select>
 
 	<insert id="update">
 		Update product
 		SET soldout=#{soldout}, name=#{name}, price=#{price}, stock=#{stock} 
-		WHERE id= #{productId}
+		WHERE product_id= #{productId}
 	</insert>
 
+	<select id="findStockById" resultType="site.metacoding.red.web.dto.ProductRespDto$ProductUpdateRespDto">
+		SELECT stock FROM product WHERE product_id = #{productId}
+	</select>
+
+	<insert id="updateStock">
+		Update product
+		SET stock=#{stock} 
+		WHERE product_id= #{productId}
+	</insert>
 
 
 </mapper>
