@@ -12,6 +12,10 @@ public class ProductRespDto {
         private Integer productId;
         private String name;
         private Integer price;
+
+    @Setter
+    @Getter
+    public static class ProductUpdateRespDto {
         private Integer stock;
     }
 }

@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.metacoding.red.domain.payment.PaymentDao">
 
-	<insert id="insert">
-
+	<insert id="insert" useGeneratedKeys="true" keyProperty="paymentId">
+		INSERT INTO payment(cancel, total_quantity, total_price) 
+		VALUES(#{cancel}, #{totalQuantity}, #{totalPrice});
 	</insert>
 
-	<select id="findAll" resultType="site.metacoding.red.domain.payment.Payment">
+	<update id="updateCancel">
+		UPDATE payment SET cancel = #{cancel}
+		WHERE payment_id = #{paymentId}
+	</update>
 
+	<select id="findAll" resultType="site.metacoding.red.web.dto.PaymentRespDto$PaymentFindAllRespDto">
+		SELECT * FROM payment p 
+		INNER JOIN orders o
+		ON p.payment_id = o.payment_id
+		INNER JOIN product pro
+		ON o.product_id = pro.product_id;
 	</select>
-
-	<select id="findById" resultType="site.metacoding.red.domain.payment.Payment">
-
-	</select>
-
-	<insert id="update">
-
-	</insert>
-
-	<insert id="deleteById">
-
-	</insert>
-
 
 </mapper>

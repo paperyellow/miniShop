@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import site.metacoding.red.web.dto.ProductRespDto.ProductInsertRespDto;
+import site.metacoding.red.web.dto.ProductReqDto.ProductUpdateReqDto;
+import site.metacoding.red.web.dto.ProductRespDto.ProductUpdateRespDto;
 
 @Repository
 public interface ProductDao {
@@ -17,4 +18,8 @@ public interface ProductDao {
 	public void update(Integer id, Product Product);
 
 	public ProductInsertRespDto insertProductResult(Integer productId);
+
+  public void updateStock(ProductUpdateReqDto productUpdateReqDto);
+
+	public ProductUpdateRespDto findStockById(Integer id);
 }
