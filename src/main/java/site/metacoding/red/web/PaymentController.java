@@ -30,4 +30,9 @@ public class PaymentController {
     public CMRespDto<?> updateCancel(@PathVariable Integer paymentId) {
         return new CMRespDto<>(1, "성공", paymentService.updateCancel(paymentId));
     }
+
+    @GetMapping("/payment")
+    public CMRespDto<?> findAll() {
+        return new CMRespDto<>(1, "성공", paymentService.findAll());
+    }
 }

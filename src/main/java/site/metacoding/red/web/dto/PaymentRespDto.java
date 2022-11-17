@@ -45,4 +45,21 @@ public class PaymentRespDto {
             this.paymentId = paymentCancelReqDto.getPaymentId();
         }
     }
+
+    @Setter
+    @Getter
+    public static class PaymentFindAllRespDto {
+        private boolean cancel;
+        private Integer paymentId;
+        private Integer totalQuantity;
+        private Integer totalPrice;
+
+        private Integer ordersId;
+        private Integer productId;
+        private Integer quantity;
+
+        private String name;
+        private Integer price;
+        private Integer stock;
+    }
 }

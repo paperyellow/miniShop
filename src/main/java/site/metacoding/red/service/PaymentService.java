@@ -16,6 +16,7 @@ import site.metacoding.red.web.dto.OrdersRespDto.OrdersFindByPaymentIdRespDto;
 import site.metacoding.red.web.dto.PaymentReqDto.PaymentCancelReqDto;
 import site.metacoding.red.web.dto.PaymentReqDto.PaymentInsertReqDto;
 import site.metacoding.red.web.dto.PaymentRespDto.PaymentCancelRespDto;
+import site.metacoding.red.web.dto.PaymentRespDto.PaymentFindAllRespDto;
 import site.metacoding.red.web.dto.PaymentRespDto.PaymentInsertRespDto;
 import site.metacoding.red.web.dto.ProductReqDto.ProductUpdateReqDto;
 import site.metacoding.red.web.dto.ProductRespDto.ProductUpdateRespDto;
@@ -82,5 +83,10 @@ public class PaymentService {
         }
 
         return new PaymentCancelRespDto(paymentCancelReqDto);
+    }
+
+    public List<PaymentFindAllRespDto> findAll() {
+        List<PaymentFindAllRespDto> paymentFindAllRespDto = paymentDao.findAll();
+        return paymentFindAllRespDto;
     }
 }
