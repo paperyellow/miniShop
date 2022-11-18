@@ -13,7 +13,6 @@ import site.metacoding.red.web.dto.CMRespDto;
 import site.metacoding.red.web.dto.OrdersReqDto.OrdersInsertReqDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RequiredArgsConstructor
 @RestController

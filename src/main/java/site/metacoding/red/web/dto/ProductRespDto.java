@@ -12,6 +12,7 @@ public class ProductRespDto {
         private Integer productId;
         private String name;
         private Integer price;
+    }
 
     @Setter
     @Getter

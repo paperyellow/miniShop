@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.red.service.ProductService;
 import site.metacoding.red.web.dto.CMRespDto;
 import site.metacoding.red.web.dto.ProductReqDto.ProductInsertReqDto;
+import site.metacoding.red.web.dto.ProductRespDto.ProductInsertRespDto;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,7 +25,9 @@ public class ProductController {
 
     @PostMapping("/product")
     public CMRespDto<?> insert(@RequestBody ProductInsertReqDto productInsertReqDto) {
-        return new CMRespDto<>(1, "상품추가성공", productService.insert(productInsertReqDto));
+        System.out.println("1 : " + productInsertReqDto);
+        ProductInsertRespDto productInsertRespDto = productService.insert(productInsertReqDto);
+        return new CMRespDto<>(1, "상품추가성공", productInsertRespDto);
     }
 
 }

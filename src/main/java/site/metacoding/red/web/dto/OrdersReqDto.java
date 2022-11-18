@@ -3,7 +3,6 @@ package site.metacoding.red.web.dto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import site.metacoding.red.domain.order.Orders;
 
 public class OrdersReqDto {
 

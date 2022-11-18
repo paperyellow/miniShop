@@ -21,9 +21,14 @@ public class ProductService {
     }
 
     public ProductInsertRespDto insert(ProductInsertReqDto productInsertReqDto) {
-        int productId = productDao.insert(productInsertReqDto.toEntity());
+        Product product = productInsertReqDto.toEntity();
+        System.out.println("2 : " + product);
+        int productId = productDao.insert(product);
+        System.out.println("3 : " + productId);
+
         ProductInsertRespDto productInsertRespDto = productDao
                 .insertProductResult(productId);
+        System.out.println("4 : " + productInsertRespDto);
         System.out.println(productId + "====================");
         return productInsertRespDto;
     }
